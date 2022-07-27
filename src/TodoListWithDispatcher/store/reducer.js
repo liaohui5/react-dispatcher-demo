@@ -21,4 +21,5 @@ function reducer(state = initState, { type, payload }) {
   throw new TypeError("[TodoList reducer]: Unknown type " + type);
 }
 
+// eslint-disable-next-line
 export default () => useReducer(reducer, initState);

@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
   todos: [
     { id: 101, content: "洗衣服", completed: false },

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { ADD_TODO } from "./store";
 
-export default function (props) {
+export default function AddTodoForm(props) {
   const [content, setContent] = useState("");
 
   const addTodo = () => {

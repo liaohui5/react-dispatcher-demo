@@ -1,6 +1,6 @@
 import TodoItem from "./TodoItem";
 
-export default function (props) {
+export default function TodoList(props) {
   const { todos, addCount, removeCount } = props;
 
   return (

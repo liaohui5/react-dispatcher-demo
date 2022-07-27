@@ -5,7 +5,7 @@ import TodoList from "./TodoList";
 
 export const TodoCtx = React.createContext(null);
 
-export default function () {
+export default function TodoListIndex() {
   const [addCount, setAddCount] = useState(0);
   const [removeCount, setRemoveCount] = useState(0);
 
