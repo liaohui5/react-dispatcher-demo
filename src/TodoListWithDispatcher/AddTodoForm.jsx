@@ -1,6 +1,5 @@
+"use strict";
 import { useState } from "react";
-
-import { ADD_TODO } from "./store";
 
 export default function AddTodoForm(props) {
   const [content, setContent] = useState("");
@@ -12,15 +11,13 @@ export default function AddTodoForm(props) {
         return;
       }
     }
+    const data = {
+      id: Date.now() + Math.random(),
+      content,
+      completed: false,
+    };
 
-    props.todoDispatch({
-      type: ADD_TODO,
-      payload: {
-        id: Date.now() + Math.random(),
-        content,
-        completed: false,
-      },
-    });
+    props.addTodo(data);
 
     setContent("");
   };

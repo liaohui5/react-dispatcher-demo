@@ -23,3 +23,4 @@ action provide 给子组件去调用, 这样 TodoList/index 就变得整洁,
 子组件需要改数据, 就自己去 dispatch 对应逻辑的 actionType 就可以了
 
 ![](https://raw.githubusercontent.com/liaohui5/images/main/images/202207271336780.png)
+
