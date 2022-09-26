@@ -10,7 +10,6 @@ import {
   REMOVE_TODO,
   TOGGLE_TODO,
 } from "./store";
-import { todoService } from "@/services";
 
 export const TodoCtx = React.createContext(null);
 
@@ -18,26 +17,17 @@ export default function TodoListWithDispatcher() {
   const [state, dispatch] = useTaskReducer(initState, actions);
 
   // 添加TODO
-  const addTodo = async function (data) {
-    const res = await todoService.addTodo(data);
-    dispatch(ADD_TODO, res.data);
-  };
+  const addTodo = (data) => dispatch(ADD_TODO, data);
 
   // 切换
-  const toggleTodo = async function(data) {
-    const res = await todoService.toggleTodo(data);
-    dispatch(TOGGLE_TODO, data);
-  };
+  const toggleTodo = (data) => dispatch(TOGGLE_TODO, data);
 
   // 删除
-  const removeTodo = async function (data) {
-    const res = await todoService.removeTodo(data);
-    dispatch(REMOVE_TODO, data);
-  }
+  const removeTodo = (data) => dispatch(REMOVE_TODO, data);
 
   useEffect(() => {
     // 获取todo
-    todoService.getTodos().then((res) => dispatch(INIT_TODO, res.data));
+    dispatch(INIT_TODO);
   }, []);
 
   return (
